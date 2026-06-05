@@ -46,4 +46,32 @@ The following skills were used in analysing this dataset:
 
 - To compare the average GDP of the chosen country with that of Bangladesh, I created a matrix card using the AVERAGE formula.
 
+`=AVERAGE(AY4:BD4)`
+
 <img width="617" height="214" alt="MatrixCard1_img" src="https://github.com/user-attachments/assets/6be64454-ebcf-4a27-b211-4209f5ec30cb" />
+
+## USA vs Countries That Suffered US-Influenced Wars
+
+<img width="736" height="508" alt="Chart2_GIF" src="https://github.com/user-attachments/assets/52ba4978-9a46-413f-91d6-e12f944a7a06" />
+
+- I used the FIND function to identify the character separating country names from dates of independence, and the character number from which the country name starts respectively. Afterwards, LEFT was used to isolate the country name.
+
+`=LEFT(A2,FIND(" ",A2))`
+
+<img width="283" height="778" alt="Table2_img" src="https://github.com/user-attachments/assets/c6e52fe7-6708-4fd9-95db-4d3ee25acce7" />
+
+- Used Advanced FILTER option from the Data tab to filter out the desired countries’ gdp data from the original sheet. There, I only kept the data corresponding to the relevant years of conflict in that particular country.
+- Used Data Validation to create a drop-down list of the country names.
+- Used SUMIF to create a dynamic row that changes according to the country chosen in the drop-down menu. Created a separate row for the USA to keep it as constant. Finally, I created a line graph using both the rows that shows the GDP progression of the chosen country and that of the USA on the same graph for comparison.
+
+`=SUMIF('Data for 2nd chart'!$A$2:$A$14,GDP_Dashboard!$R$7,'Data for 2nd chart'!A2:AZ2)`
+
+- Lastly, I expressed the chosen country's GDP as a percentage of the US GDP using the SUM formula.
+
+`=SUM(F7:BD7)/SUM(F8:BD8)`
+
+<img width="550" height="159" alt="MatrixCard2_img" src="https://github.com/user-attachments/assets/28826088-8dc3-4dcd-97bf-d4def32d9430" />
+
+# Conclusion
+
+This dashboard was created to provide an insight into the economic growth of different countries under different circumstances. Users can utilize this to make political and economic decisions.
